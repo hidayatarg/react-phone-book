@@ -13,15 +13,13 @@ class List extends Component {
             <input name={"filter"} id={"filter"} placeholder={"Filter by name or phone"} />
             <ul className={"list"}>    
                 {
-                    this.props.contacts.map(contact => {
-                        return (
+                    this.props.contacts.map(contact =>    
                         <li key={contact.phone}>
                             <span className={"name"}>{contact.name}</span>
                             <span className={"phone"}>{contact.phone}</span>
                             <span className={"clearfix"}></span>
-                        </li>
-                        )
-                    })
+                        </li>                       
+                    )
                 }
                 
             </ul>
