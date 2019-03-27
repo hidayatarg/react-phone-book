@@ -4,7 +4,7 @@ import Form from './Form';
 
 class Contacts extends Component {
     state = {
-        contact: [{
+        contacts: [{
             name: 'Mehmet',
             phone: '12345215'
         }, {
@@ -16,7 +16,7 @@ class Contacts extends Component {
         return (
             <div>
                  {/* Sending the states to the List component */}
-                <List contacts={this.state.contact} />
+                <List contacts={this.state.contacts} />
                 <Form />
             </div>
           
