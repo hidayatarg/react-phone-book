@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import List from './List';
+import Form from './Form';
 
 class Contacts extends Component {
     render() {
         return (
-            <List /> 
+            <div>
+                <List />
+                <Form />
+            </div>
+          
             );
     }
 }
