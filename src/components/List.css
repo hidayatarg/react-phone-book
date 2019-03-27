@@ -1,0 +1,25 @@
+input {
+    margin-top: 10px;
+    height: 25px;
+    line-height: 25px;
+    width: 100%;
+    text-indent: 10px;
+    border-radius: 4px;
+    outline: none;
+}
+
+.listArea{
+    width: 500px;
+    /* Put to center */
+    margin: 0 auto;
+}
+
+.list{
+    /* padding: 7px 5px; */
+}
+
+.list li{
+    padding: 5px;
+    background-color: #f8f8f8;
+    border: 1px solid #f1f1f1;
+}
