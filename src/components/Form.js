@@ -36,6 +36,12 @@ class Form extends Component {
             ...this.state
         });
 
+        // Clean the fields
+        this.setState({
+            name: '',
+            phone: '',
+        });
+
     }
 
     render() {
