@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'
 
 
 class Form extends Component {
@@ -6,7 +7,13 @@ class Form extends Component {
        super();
     //    bind the method
     this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
    }
+
+    static propTypes = {
+        // And incoming function from parent 
+        addContact: PropTypes.func
+    };
    
     state = {
         name: '',
@@ -19,10 +26,17 @@ class Form extends Component {
         })
     }
 
+    onSubmit(event){
+        // Stoping the default behavior
+        event.preventDefault();
+        console.log('onSubmit');
+
+    }
+
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={this.onSubmit}>
                     <input 
                     name="name" 
                     id="name" 
@@ -30,6 +44,7 @@ class Form extends Component {
                     onChange={this.onChange} 
                     placeholder="Enter a name" />
                     <br/>
+                   
                     <input 
                     name="phone" 
                     id="phone" 
