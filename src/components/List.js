@@ -21,6 +21,15 @@ class List extends Component {
     };
 
     render() {
+        const filteredContacts = this.props.contacts.filter(
+            // contact will come here
+            contact => {
+                return contact.name.toLowerCase().indexOf(
+                    this.state.filterText.toLowerCase()
+                ) !== -1
+                // if doesn't find it will return -1
+            }
+        );
         return (
             <div className={"listArea"}>
             <input 
@@ -31,7 +40,7 @@ class List extends Component {
             placeholder={"Filter by name or phone"} />
             <ul className={"list"}>
             {
-                    this.props.contacts.map(contact =>                        
+                    filteredContacts.map(contact =>                        
                         <li key={contact.phone}>
                             <span className={"name"}>{contact.name}</span>
                             <span className={"phone"}>{contact.phone}</span>
