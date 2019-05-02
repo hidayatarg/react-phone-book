@@ -7,10 +7,28 @@ class List extends Component {
     static propTypes = {
         contacts: PropTypes.array.isRequired,
     };
+
+    state = {
+        filterText:''
+    };
+    // Summary
+    // Arrow functions doesnt need bindings
+    onChangeFilterText=(event) => {
+        console.log(event.target.value);
+        this.setState({
+            filterText: event.target.value
+        });
+    };
+
     render() {
         return (
             <div className={"listArea"}>
-            <input name={"filter"} id={"filter"} placeholder={"Filter by name or phone"} />
+            <input 
+            value={this.state.filterText}
+            onChange={this.onChangeFilterText} 
+            name={"filter"} 
+            id={"filter"} 
+            placeholder={"Filter by name or phone"} />
             <ul className={"list"}>
             {
                     this.props.contacts.map(contact =>                        
