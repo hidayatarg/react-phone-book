@@ -17,8 +17,15 @@ class App extends Component {
         }]
     }
 
-  addContact(){
-    console.log('contact added');
+  addContact(contact){
+    console.log('Incoming Contact: ', contact);
+    // filling contact under the state
+    const { contacts } = this.state;
+    contacts.push(contact)
+    // updating the state
+    this.setState({
+      contacts
+    });
     
   }
   render() {

@@ -29,7 +29,12 @@ class Form extends Component {
     onSubmit(event){
         // Stoping the default behavior
         event.preventDefault();
-        console.log('onSubmit');
+        // console.log({...this.state});
+
+        // Sending the data to the
+        this.props.addContact({
+            ...this.state
+        });
 
     }
 
