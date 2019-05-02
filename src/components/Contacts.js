@@ -1,25 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types'
 import List from './List';
 import Form from './Form';
 
+// We dont have any state here so will define here as a stateless component
+// StateLess Component
 
-class Contacts extends Component {
-    static propTypes = {
-        contacts: PropTypes.array.isRequired,
-        // And incoming function from parent 
-        addContact: PropTypes.func
-    };
-    render() {
-        return (
+const Contacts = (props) => 
             <div>
                  {/* Sending the states to the List component */}
-                <List contacts={this.props.contacts} />
-                <Form addContact={this.props.addContact} />
+                <List contacts={props.contacts} />
+                <Form addContact={props.addContact} />
             </div>
-          
-            );
-    }
+
+Contacts.prototypes = {
+    contacts: PropTypes.array.isRequired,
+    addContact: PropTypes.func
 }
 
 export default Contacts;
